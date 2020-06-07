@@ -1,0 +1,13 @@
+{% extends 'authnapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ update_form.as_p }}
+        <input class="form-control" type="submit" value="Cохранить">
+    </form>
+    <button class="btn btn-round form-control last admin-button">
+        <a href="{% url 'admin:users' %}">К списку пользователей</a>
+    </button><br>
+{% endblock content %}
