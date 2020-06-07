@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% if basket_items %}
+    <h2 class="basket-header">Корзина</h2>
+    <div class="basket_list">
+        {% include 'basketapp/includes/inc_basket_list.html' %}
+    </div>
+    {% else %}
+        <h2 class="basket-header">Ваша корзина пуста</h2>
+    {% endif %}
+{% endblock %}

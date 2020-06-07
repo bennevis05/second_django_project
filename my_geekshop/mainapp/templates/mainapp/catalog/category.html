@@ -1,0 +1,34 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="category-content">
+        <hr>
+        <h1>{{ current_category.title }}</h1>
+        {% if not products_category %}
+            <div class="all-products">
+                <p class="all-category_product">В данной категории товары отсутствуют</p>
+            </div>
+        {% else %}
+            <div class="paginator">
+                {% if products_category.has_previous %}
+                    <a href="{% url 'catalog:page' current_category.pk products_category.previous_page_number %}" title="Предыдущая страница"><i
+                        class="fas fa-chevron-circle-left"></i>&#129092;</a>
+                {% endif %}
+                <span class="current">
+                    Страница {{ products_category.number }} из {{ products_category.paginator.num_pages }}
+                </span>
+                {% if products_category.has_next %}
+                    <a href="{% url 'catalog:page' current_category.pk products_category.next_page_number %}" title="Следующая страница"><i
+                        class="fas fa-chevron-circle-right"></i>&#129094;</a>
+                {% endif %}
+            </div>
+            {% for product in products_category %}
+                <div class="category_product">
+                    <a href="{% url 'catalog:product' current_category.id product.id %}"><img src="/media/{{ product.product_image }}" alt="Товар"></a><br>
+                    <a href="{% url 'catalog:product' current_category.id product.id %}">{{ product.name }}</a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

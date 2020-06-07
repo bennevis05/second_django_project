@@ -1,0 +1,26 @@
+[
+    {
+        "model": "mainapp.productcategory",
+        "pk": 1,
+        "fields": {
+            "title": "Видеокарты",
+            "description": "Комплектующие для ПК"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 2,
+        "fields": {
+            "title": "Смартфоны",
+            "description": "Мобильные телефоны и смартфоны"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 3,
+        "fields": {
+            "title": "Увлажнители воздуха",
+            "description": "Увлажнители и очистители воздуха"
+        }
+    }
+]
