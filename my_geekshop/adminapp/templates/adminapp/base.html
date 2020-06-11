@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html class="admin-panel-html">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+
+<body class="admin-panel-body">
+    <div class="admin_container">
+        <div class="h2 text-center head">
+            <h2>Админка</h2>
+        </div>
+        {% block menu %}
+        <div class="admin_menu">
+            {% include 'adminapp/includes/inc_menu.html' %}
+        </div><hr>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

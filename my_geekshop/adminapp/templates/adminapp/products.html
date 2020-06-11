@@ -1,0 +1,51 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="products_list">
+    <button class="new_product admin-button">
+        <a href="{% url 'admin:product_create' category.pk %}">Добавить новый продукт</a>
+    </button>
+
+    <div class="paginator">
+        {% if objects.has_previous %}
+            <a href="{% url 'admin:products_page' category.pk objects.previous_page_number %}" title="Предыдущая страница"><i
+                class="fas fa-chevron-circle-left"></i>&#129092;</a>
+        {% endif %}
+        <span class="current">
+            Страница {{ objects.number }} из {{ objects.paginator.num_pages }}
+        </span>
+        {% if objects.has_next %}
+            <a href="{% url 'admin:products_page' category.pk objects.next_page_number %}" title="Следующая страница"><i
+                class="fas fa-chevron-circle-right"></i>&#129094;</a>
+        {% endif %}
+    </div>
+
+    {% for object in objects %}
+    <div class="product_record {% if not object.is_active %}not_active{% endif %}">
+        <img src="{{ media_url }}{{ object.product_image|default:'products_images/object.product_image' }}" alt="{{ object.name }}">
+        <div class="product_title">
+            <b>Наименование: </b>{{ object.name|title }}
+        </div>
+        <div class="summary">
+            <b>Цена: </b>{{ object.price }} руб.<br>
+            <b>Количество: </b>{{ object.quantity }}<br>
+        </div>
+        <div class="product_desc">
+            <b>Описание: </b>{{ object.short_desc }}
+        </div>
+        <div class="product_actions">
+            <button class="admin-button">
+                <a href="{% url 'admin:product_read' object.pk %}">Подробнее</a>
+            </button>
+            <button class="admin-button">
+                <a href="{% url 'admin:product_update' object.pk %}">Редактировать</a>
+            </button>
+            <button class="admin-button">
+                <a href="{% url 'admin:product_delete' object.pk %}">Удалить</a>
+            </button>
+        </div>
+    </div><hr>
+    {% endfor %}
+</div>
+{% endblock %}
