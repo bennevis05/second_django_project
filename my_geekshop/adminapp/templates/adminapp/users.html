@@ -1,0 +1,60 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="users_list">
+    <button class="new_user admin-button">
+        <a href="{% url 'admin:user_create' %}">Добавить нового пользователя</a>
+    </button>
+
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            <a href="{% url 'admin:users_page' page_obj.previous_page_number %}" title="Предыдущая страница"><i
+                class="fas fa-chevron-circle-left"></i>&#129092;</a>
+        {% endif %}
+        <span class="current">Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="{% url 'admin:users_page' page_obj.next_page_number %}" title="Следующая страница"><i
+                class="fas fa-chevron-circle-right"></i>&#129094;</a>
+        {% endif %}
+    </div>
+
+    {% for object in object_list %}
+    <div class="user_record {% if not object.is_active %}not_active{% endif %}">
+        <img src="/media/{{ object.avatar|default:'users_avatars/default_user_img.png' }}" alt="{{ object.username }}">
+        <div class="user_info">
+            <div class="user_role">
+                Роль: {% if object.is_superuser %}Администратор{% else %}Пользователь{% endif %}
+            </div>
+            <div class="user_name">
+                <p>Псевдоним: <strong>{{ object.username }}</strong></p>
+                <p>
+                    {% if object.first_name %}
+                        Имя: <b>{{ object.first_name|title }}</b>
+                    {% if object.last_name %}
+                        Фамилия: <p>{{ object.last_name|title }}</p>
+                    {% endif %}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="user_age">
+                Возраст: {{ object.age }}
+            </div>
+            <div class="user_email">
+                Email: {{ object.email }}
+            </div>
+            <div class="user_lastlogin">
+                Logged: {{ object.last_login }}
+            </div>
+            <button class="admin-button">
+                <a href="{% url 'admin:user_update' object.pk %}">Редактировать</a>
+            </button>
+            <button class="admin-button">
+                <a href="{% url 'admin:user_delete' object.pk %}">Удалить</a>
+            </button>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock content %}
