@@ -1,0 +1,12 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="content">
+        <hr>
+        <h1>Каталог</h1>
+        <div class="catalog">
+            {% include 'mainapp/includes/inc_categories.html' %}
+        </div>
+    </div>
+{% endblock %}

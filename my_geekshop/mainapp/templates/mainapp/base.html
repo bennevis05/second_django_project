@@ -1,0 +1,119 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    {% endblock %}
+    
+    {% block js %}
+        <script src="https://use.fontawesome.com/026165a3c4.js"></script>
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+        <script src="{% static 'js/basket_script.js' %}"></script>
+        <script src="{% static 'js/script.js' %}" defer></script>
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        {% block header %}
+        <div class="page-header">
+            <div class="logo">
+                <a href="{% url 'main' %}"><img src="{% static 'img/logo.png' %}" alt="Логотип" width="125px" title="Перейти на главную страницу"></a>
+            </div>
+            <div class="sign-up-and-basket">
+                {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <span>Здравствуйте, {{ user.first_name|default:'Пользователь' }}!</span>
+                        (<span class="dropdown-toggle" id="dropdown-toggle">Личный кабинет
+                            <span class="caret"></span>
+                        </span>
+                        <a href="{% url 'auth:logout' %}"> | Выйти</a>)
+                        <ul class="dropdown-menu" id="dropdown-menu">
+                            <li>
+                                <a href="{% url 'auth:edit' %}">Профиль</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'ordersapp:orders_list' %}">Заказы</a>
+                            </li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <a href="{% url 'auth:login' %}">Войти</a>
+                {% endif %}
+                <a href="{% url 'basket:view' %}" class="basket-ref"><img src="{% static 'img/basket-img.png' %}" alt="basket" class="basket-image">
+                {% if basket %}
+                    <span class="formatted-price">
+                    {{ basket.0.total_cost }} руб.</span> - <span>{{ basket.0.total_quantity }} шт.</span>
+                {% else %}
+                    <span>Корзина (0)</span>
+                {% endif %}
+                </a>
+            </div>
+            <form class="form-search" action="#">
+                <button type="submit" class="icon-search"><img src="{% static 'img/icon-search.png' %}" alt="search"></button>
+                <div class="form-group"><input type="text" placeholder="ПОИСК" name=""></div>
+            </form>
+            {% include 'mainapp/includes/inc_menu.html' %}
+        </div>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block footer %}
+            <div class="page-footer">
+                <hr>
+                <div class="footer-info">
+                    <h3 class="footer-info-header">Информация</h3>
+                    <ul class="footer-info-list">
+                        <li class="footer-info-item"><a href="#">Доставка и оплата</a></li>
+                        <li class="footer-info-item"><a href="#">Гарантия и ремонт</a></li>
+                        <li class="footer-info-item"><a href="#">Акции</a></li>
+                        <li class="footer-info-item"><a href="#">Пользовательское соглашение</a></li>
+                        <li class="footer-info-item"><a href="#">Мобильное приложение</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu">
+                    <h3 class="footer-menu-header">uiRepublic</h3>
+                    <ul class="footer-menu-list">
+                        <li class="footer-menu-item"><a href="{% url 'catalog:main' %}">Каталог</a></li>
+                        <li class="footer-menu-item"><a href="#">Часы</a></li>
+                        <li class="footer-menu-item"><a href="#">Аксессуары</a></li>
+                        <li class="footer-menu-item"><a href="#">Бренды</a></li>
+                        <li class="footer-menu-item"><a href="{% url 'contact' %}">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="stay-in-touch">
+                    <h3 class="stay-in-touch-heading">Оставайтесь на связи!</h3>
+                    <p class="stay-in-touch-text">Подпишитесь, чтобы узнать о наших последних новостях, продуктах и специальных предложениях.</p>
+                    <form action="#" class="email-footer-form">
+                        <input type="email" placeholder="Ваш Email адрес">
+                        <input type="submit" value="" title="Отправить">
+                    </form>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&laquo;uiRepublic&raquo; &copy; {% now 'Y' %} &laquo;Все права защищены&raquo;</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><img src="{% static 'img/fb-img.jpg' %}" alt="facebook-image"></a>
+                        <a href="#" target="_blank"><img src="{% static 'img/twi-img.jpg' %}" alt="twitter-image"></a>
+                        <a href="#" target="_blank"><img src="{% static 'img/g-plus-img.jpg' %}" alt="google-plus-image"></a>
+                        <a href="#" target="_blank"><img src="{% static 'img/pin-img.jpg' %}" alt="pinterest-image"></a>
+                    </div>
+                    <p class="footer-terms">Соглашение / Приватность & Файлы cookies</p>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

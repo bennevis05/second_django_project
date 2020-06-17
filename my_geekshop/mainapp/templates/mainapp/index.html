@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="content">
+        <div class="paginator">
+            <img src="{% static 'img/clock1.jpg' %}" alt="pic">
+        </div>
+        <div class="hot-products">
+            <h2 class="hot-products-header">Популярные товары</h2>
+            {% for product in hot_products %}
+                <div class="category_product_main_page">
+                    <img src="/media/{{ product.product_image }}" alt="Товар" class="product_img_main_page"><br>
+                    <p class="product-name_main_page">{{ product.name }}</p>
+                    <p class="product-price_main_page formatted-price">{{ product.price }}</p>
+                    <a href="{% url 'catalog:product' 1 product.id %}"><p class="detail-button">Подробнее</p></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
