@@ -46,7 +46,7 @@ body {
     width: 160px;
     list-style-type: none;
     text-align: center;
-    margin: 0 0 0 259px;
+    margin: 0 0 0 261px;
     line-height: 30px;
     border: 1px solid grey;
     display: none;
@@ -516,505 +516,45 @@ body {
 .btn-round {
     margin-bottom: 5px;
 }
+/*-----------------End of order-page styling-----------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* html,
-body {
-    margin: 0;
-    background-color: #EAEAEA;
-}
-
-.container {
-    width: 800px;
-    margin: 0 auto;
-    background-color: #f8f8f8;
-}
-
-.page-header {
-    height: 150px;
-    background-image: url(/static/img/bg-img1.jpg);
-    background-size: cover;
-}
-
-.logo {
-    width: 125px;
-    height: 125px;
-    float: left;
-    padding: 5px 0 0 25px;
-}
-
-.menu {
-    list-style-type: none;
-    overflow: hidden;
-    margin: 0;
-    padding-top: 55px;
-    padding-left: 0;
-    text-align: right;
-}
-
-.menu li {
-    padding: 0 10px;
-    display: inline-block;
-    text-align: center;
-}
-
-.menu li a {
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.menu li a:hover {
-    color: #FFCC33;
-}
-
-.content {
-    padding: 0 5px;
-    padding-bottom: 10px;
-}
-
-.content h1 {
-    text-align: center;
-}
-
-.page-footer {
-    font-size: 17px;
-    height: 100px;
-    padding: 0 5px;
-    background-color: #FFCC33;
-    text-align: right;
-    clear: both;
-}
-
-.page-footer p {
-    margin: 0;
-    padding-top: 35px;
-}
-
-hr {
-    margin: 0;
-}
-
-.map iframe {
-    width: 100%;
-    height: 374px;
-}
-
-.product_name {
-    color: black;
-    font-size: 18px;
-    font-weight: 400;
-    background-color: lightgray;
-}
-
-.brief_description {
-    padding: 0 5px;
-    overflow: hidden;
-}
-
-.brief_description h2,
-.specifications-header h2 {
-    color: #707070;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 16px;
-}
-
-.detailed_description {
-    clear: both;
-}
-
-.detailed_description h2,
-.appearance h2 {
-    color: #484343;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-}
-
-.product_images {
-    float: left;
-}
-
-.product_images a img {
-    margin: 2px;
-    outline: 2px solid darkslateblue;
-}
-
-.product_images a img:hover {
-    outline: none;
-}
-
-.categories {
-    font-size: 24px;
-    text-align: center;
+.catalog-header {
+    padding-left: 60px;
 }
 
 .categories-list {
-    font-size: 22px;
-}
-
-.categories-list a {
-    text-decoration: none;
-}
-
-.all-products {
-    text-align: center;
-}
-
-.category-content {
-    text-align: center;
-}
-
-.category_product {
-    display: inline-block;
-    width: 30%;
-}
-
-.category_product img {
-    width: 125px;
-    height: 125px;
-    border: 1px solid darkslateblue;
-    border-radius: 10px;
-}
-
-.category_product a {
-    text-decoration: none;
-}
-
-.contact-input {
-    margin: 2px;
-    width: 200px;
-    height: 20px;
-    color: black;
-}
-
-input[type="email"]:focus {
-    color: royalblue;
-    background-color: lightyellow;
-}
-
-.product-info p:first-letter {
-    text-transform: uppercase;
-    font-size: 30px;
-    color: darkslateblue;
-}
-
-.specifications {
-    border-collapse: collapse;
-    float: left;
-    margin-bottom: 10px;
-}
-
-.specifications td {
-    padding: 10px;
-    border: 1px solid;
-}
-
-.specifications tr:nth-child(odd) {
-    background-color: lightgray;
-}
-
-.price,
-.buy-button {
-    overflow: hidden;
-    text-align: center;
-}
-
-.price {
-    padding: 30px 0 0 8px;
-}
-
-.buy-button {
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    width: 175px;
-    height: 30px;
-    margin: 0 auto;
-    background-color: #FFCC33;
-}
-
-.buy-button a {
-    padding-top: 5px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-    font-weight: 700;
-}
-
-.buy-button a:hover {
-    color: blue;
-}
-
-.buy-button:active {
-    background-color: #f8f8f8;
-}
-
-.auth-container {
-    width: 800px;
-    margin: 0 auto;
-    padding-right: 156px;
-}
-
-.login {
-    width: 460px;
-    text-align: center;
-    margin-top: 80px;
-    margin-left: 240px;
-    background-color: white;
-    border: 1px solid grey;
-    border-radius: 5px;
-}
-
-.auth-container::after {
-    content: '';
-    border: 1px solid #EAEAEA;
-    height: 200px;
-}
-
-.login p {
-    width: 210px;
-    padding-left: 56px;
-}
-
-.btn-round {
-    margin-top: 30px;
-}
-
-.basket {
-    padding-top: 20px;
-    padding-left: 565px;
-}
-
-.basket a {
-    color: black;
-    font-size: 24px;
-    text-decoration: none;
-}
-
-.basket-image {
-    width: 25px;
-}
-
-.basket span {
-    font-size: 18px;
-}
-
-.hot-products {
-    text-align: center;
-}
-
-.hot-products p {
-    font-size: 24px;
-}
-
-.basket-header {
-    text-align: center;
-}
-
-.basket_list {
-    padding-left: 15px;
-}
-
-.basket_record {
-    margin-bottom: 25px;
-}
-
-.basket-product-info {
-    line-height: 30px;
-}
-
-.basket_record img {
-    width: 175px;
-    height: 175px;
-    border: 1px solid darkslateblue;
-    border-radius: 10px;
-    float: left;
-    margin-right: 10px;
-}
-
-.basket-input {
-    width: 30px;
-}
-
-.basket_summary {
-    margin-top: 50px;
-}
-
-.admin-panel-html,
-.admin-panel-body {
-    background-color: white;
-}
-
-.admin_container {
-    width: 800px;
-    margin: 0 auto;
-}
-
-.not_active {
-    opacity: 0.5;
-}
-
-.user_record {
-    line-height: 24px;
-    margin: 37px;
-    font-size: 18px;
-}
-
-.user_record img {
-    width: 150px;
-    border: 1px solid black;
-    border-radius: 50%;
-    background-color: navajowhite;
-    float: left;
-    margin-right: 15px;
-}
-
-.head {
-    text-align: center;
-    padding-top: 10px;
-}
-
-.admin_menu .menu {
     list-style-type: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 25px 0;
-    text-align: right;
+    text-align: center;
+    padding: 0;
 }
 
-.admin-button {
-    margin: 10px 0 15px 10px;
+.categories-item {
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
     border: 1px solid gray;
-    border-radius: 10px;
-    line-height: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px lightgrey;
 }
 
-.admin-button a {
+.categories-item a {
     text-decoration: none;
     color: black;
-    font-size: 16px;
 }
 
-.user_info {
-    overflow: hidden;
+.category-img {
+    width: 200px;
 }
 
-.categories_list {
-    font-size: 18px;
-}
 
-.category_record {
-    margin: 40px 0 10px 0;
-    line-height: 24px;
-}
 
-.form-horizontal {
-    padding-left: 68px;
-}
 
-#id_user_permissions {
-    position: relative;
-    left: -86px;
-}
 
-#id_description {
-    position: relative;
-    right: 40px;
-}
 
-.float-left-btn {
-    float: left;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.product_record {
-    padding-top: 27px;
-    line-height: 35px;
-}
 
-.product_record img, .product_read img {
-    width: 175px;
-    height: 175px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    float: left;
-    margin-right: 10px;
-}
 
-.product_title {
-    color: black;
-    font-size: 18px;
-    font-weight: 400;
-    overflow: hidden;
-}
 
-input[value="Войти"] {
-    position: relative;
-    right: 33px;
-}
 
-#id_detailed_desc {
-    margin-left: 29px;
-}
 
-#id_specifications {
-    margin-left: 61px;
-}
-
-.new_user, .new_category, .new_product {
-    float: left;
-}
-
-.paginator {
-    text-align: right;
-    margin: 0 10px 10px 0;
-    padding-top: 5px;
-    overflow: hidden;
-}
-
-.paginator a {
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-} */

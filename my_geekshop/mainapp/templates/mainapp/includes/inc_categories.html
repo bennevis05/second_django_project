@@ -1,5 +1,10 @@
 <ul class="categories-list">
     {% for category in categories %}
-        <li><a href="{% url 'catalog:category' category.id %}">{{ category.title }}</a></li>
+        <li class="categories-item">
+            <a href="{% url 'catalog:category' category.id %}">
+                <img src="/media/{{ category.image }}" alt="" class="category-img">
+                <p class="category-title">{{ category.title }}</p>
+            </a>
+        </li>
     {% endfor %}
 </ul>

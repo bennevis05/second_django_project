@@ -13,6 +13,7 @@ def forwards_func(apps, schema_editor):
     product_category_object = product_category_model.objects.create(
         pk=1,
         title="Мужские часы",
+        image="categories_images/man_watch_catalog_img.jpg",
         description="Lorem ipsum dolor sit amet",
         is_active=True,
     )
@@ -28,7 +29,7 @@ def forwards_func(apps, schema_editor):
         appearance="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
         specifications="Материал корпуса: Сталь;Механизм: Кварц;Браслет: Браслет;Диаметр корпуса: 41 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
         price=65500,
-        quantity=4,
+        quantity=42,
         is_active=True,
     )
 
@@ -42,7 +43,7 @@ def forwards_func(apps, schema_editor):
         appearance="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
         specifications="Материал корпуса: Золото;Механизм: Механика;Браслет: Кожаный ремень;Диаметр корпуса: 42 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
         price=233500,
-        quantity=2,
+        quantity=22,
         is_active=True,
     )
 
@@ -56,7 +57,7 @@ def forwards_func(apps, schema_editor):
         appearance="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
         specifications="Материал корпуса: Золото;Механизм: Механика;Браслет: Каучук;Диаметр корпуса: 43 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
         price=1033200,
-        quantity=1,
+        quantity=12,
         is_active=True,
     )
     del product_category_object  # Delete link for category
@@ -66,6 +67,7 @@ def forwards_func(apps, schema_editor):
     product_category_object = product_category_model.objects.create(
         pk=2,
         title="Женские часы",
+        image="categories_images/woman_watch_catalog_img.jpg",
         description="Lorem ipsum dolor sit amet",
         is_active=True,
     )
@@ -81,7 +83,7 @@ def forwards_func(apps, schema_editor):
         appearance="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
         specifications="Материал корпуса: Сталь;Механизм: Кварц;Браслет: Браслет;Диаметр корпуса: 24 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
         price=87300,
-        quantity=2,
+        quantity=23,
         is_active=True,
     )
     del product_category_object  # Delete link for category
