@@ -1,0 +1,36 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+{% load mail_to %}
+
+{% block content %}
+<div class="content">
+    <hr>
+    <h1>Контакты</h1>
+    <h3>Обратная связь</h3>
+    <p>Задайте любой интересующий вопрос с помощью формы обратной связи</p>
+    <form action="">
+        <label for="name-field">Ваше имя:</label><br>
+        <input type="text" placeholder="Имя" id="name-field" class="contact-input"><br>
+
+        <label for="surname-field">Ваша фамилия:</label><br>
+        <input type="text" placeholder="Фамилия" id="surname-field" class="contact-input"><br>
+
+        <label for="city-field">Город:</label><br>
+        <input type="text" placeholder="Город" id="city-field" class="contact-input"><br>
+
+        <label for="email-field">E-mail:</label><br>
+        <input type="email" placeholder="Эл. почта" id="email-field" class="contact-input"><br>
+
+        <label for="message-field">Текст сообщения:</label><br>
+        <textarea cols="60" rows="10" placeholder="Необходимо максимально точно описать свой вопрос." id="message-field"></textarea><br>
+
+        <input type="reset" value="Очистить форму" class="contact-input">
+        <input type="submit" value="Отправить" class="contact-input">
+    </form>
+    <div class="map">
+        <h3>Наш адрес: 125362, г. Москва, ул. Тушинская 16</h3>
+        <h4>Наша электронная почта: {{ email|mail_to }}</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2241.040846680569!2d37.44318012848745!3d55.82725031075546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54875631f169b%3A0xda991ee45957397b!2z0KLRg9GI0LjQvdGB0LrQsNGPINGD0LsuLCAxNiwg0JzQvtGB0LrQstCwLCAxMjUzNjI!5e0!3m2!1sru!2sru!4v1583432775522!5m2!1sru!2sru" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'authnapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="">Регистрация</div>
+    <form class="form-horizontal" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="Зарегистрироваться">
+        <br>
+        <button class="btn btn-round form-control last">
+            <a href="{% url 'main' %}" class="">На главную</a>
+        </button>
+    </form>
+{% endblock %}
