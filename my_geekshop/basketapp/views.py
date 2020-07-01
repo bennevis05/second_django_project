@@ -13,13 +13,13 @@ from mainapp.models import Product
 def basket(request):
     title = "Корзина"
     basket_items = Basket.objects.filter(user=request.user).order_by("product__category")
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    # basket = []
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
     content = {
         "title": title,
         "basket_items": basket_items,
-        'basket': basket,
+        # 'basket': basket,
         "media_url": settings.MEDIA_URL,
         "project_settings": settings
     }

@@ -42,7 +42,7 @@
                             {{ field }}
                         {% else %}
                             {% if field.value %}
-                            <span class="orderitems-{{ forloop.parentloop.counter0 }}-price">{{ field.value|unlocalize }}</span> руб.
+                                <span class="orderitems-{{ forloop.parentloop.counter0 }}-price">{{ field.value|unlocalize }}</span> руб.
                             {% endif %}
                         {% endif %}
                     </td>
