@@ -1,0 +1,50 @@
+[
+    {
+        "model": "mainapp.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Longines HydroConquest L3.740.4.96.6",
+            "product_image": "products_images/longines_hydroconquest_L3.740.4.96.6.jpg",
+            "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ipsa",
+            "detailed_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum itaque vel qui assumenda? Dolorem, optio veritatis non expedita at explicabo soluta commodi quae asperiores, facilis obcaecati rerum, temporibus ut consectetur.",
+            "appearance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
+            "specifications": "Материал корпуса: Сталь;Механизм: Кварц;Браслет: Браслет;Диаметр корпуса: 41 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
+            "price": 65500,
+            "quantity": 42,
+            "is_active": "True"
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "Longines Master Collection L2.773.4.78.5",
+            "product_image": "products_images/longines_master_collection_L2.773.4.78.5.jpg",
+            "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ipsa",
+            "detailed_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum itaque vel qui assumenda? Dolorem, optio veritatis non expedita at explicabo soluta commodi quae asperiores, facilis obcaecati rerum, temporibus ut consectetur.",
+            "appearance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
+            "specifications": "Материал корпуса: Золото;Механизм: Механика;Браслет: Кожаный ремень;Диаметр корпуса: 42 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
+            "price": 233500,
+            "quantity": 22,
+            "is_active": "True"
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 4,
+        "fields": {
+            "category": 2,
+            "name": "Longines La Grande Classique L4.209.4.58.6",
+            "product_image": "products_images/longines_la_grande_classique_L4.209.4.58.6.jpg",
+            "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ipsa",
+            "detailed_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum itaque vel qui assumenda? Dolorem, optio veritatis non expedita at explicabo soluta commodi quae asperiores, facilis obcaecati rerum, temporibus ut consectetur.",
+            "appearance": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa dolorum commodi sit maiores illo quae dolore facere! Sit, possimus.",
+            "specifications": "Материал корпуса: Сталь;Механизм: Кварц;Браслет: Браслет;Диаметр корпуса: 24 мм.;Форма корпуса: Круг;Страна производитель: Швейцария",
+            "price": 87300,
+            "quantity": 23,
+            "is_active": "True"
+        }
+    }
+]
