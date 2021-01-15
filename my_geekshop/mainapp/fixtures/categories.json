@@ -1,0 +1,18 @@
+[
+    {
+        "model": "mainapp.productcategory",
+        "pk": 1,
+        "fields": {
+            "title": "Мужские часы",
+            "description": "Lorem ipsum dolor sit amet"
+        }
+    },
+    {
+        "model": "mainapp.productcategory",
+        "pk": 2,
+        "fields": {
+            "title": "Женские часы",
+            "description": "Lorem ipsum dolor sit amet"
+        }
+    }
+]

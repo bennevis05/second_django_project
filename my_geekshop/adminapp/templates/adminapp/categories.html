@@ -1,0 +1,46 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="categories_list">
+    <button class="new_category admin-button">
+        <a href="{% url 'admin:category_create' %}">Добавить новую категорию</a>
+    </button>
+
+    <div class="paginator">
+        {% if objects.has_previous %}
+            <a href="{% url 'admin:categories_page' objects.previous_page_number %}" title="Предыдущая страница"><i
+                class="fas fa-chevron-circle-left"></i>&#129092;</a>
+        {% endif %}
+        <span class="current">
+            Страница {{ objects.number }} из {{ objects.paginator.num_pages }}
+        </span>
+        {% if objects.has_next %}
+            <a href="{% url 'admin:categories_page' objects.next_page_number %}" title="Следующая страница"><i
+                class="fas fa-chevron-circle-right"></i>&#129094;</a>
+        {% endif %}
+    </div>
+
+    {% for object in objects %}
+    <div class="category_record {% if not object.is_active %}not_active{% endif %}">
+        <div class="category_name">
+            Наименование: {{ object.title }}
+        </div>
+        <div class="category_desc">
+            Описание: {{ object.description }}
+        </div>
+        <div class="category_actions">
+            <button class="admin-button">
+                <a href="{% url 'admin:products' object.pk %}">Товары категории</a>
+            </button>
+            <button class="admin-button">
+                <a href="{% url 'admin:category_update' object.pk %}">Редактировать</a>
+            </button>
+            <button class="admin-button">
+                <a href="{% url 'admin:category_delete' object.pk %}">Удалить</a>
+            </button>
+        </div><hr>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

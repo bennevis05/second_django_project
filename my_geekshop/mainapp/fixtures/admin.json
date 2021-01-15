@@ -1,0 +1,24 @@
+[
+    {
+      "model": "authnapp.shopuser",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$150000$nROMUaC9YhAK$gOh81nQPXgLS+mdAp5fJ2wDVAg9etu+ZYtA5TQwl83o=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@ya.ru",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-06-23T16:46:43.307Z",
+        "avatar": "",
+        "age": 18,
+        "activation_key": "",
+        "activation_key_expires": "2020-06-25T16:46:40.651Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    }
+  ]
